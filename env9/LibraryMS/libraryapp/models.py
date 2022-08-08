@@ -34,7 +34,7 @@ class CustomUser(AbstractBaseUser):
     USER_TYPE=[['S','staff'],
                 ['U','Normal User'],
     ]
-    user_id=models.IntegerField(max_length=6,null=False,unique=False)           
+    # user_id=models.IntegerField(max_length=6,null=False,unique=False)           
     email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=100, blank=False, null=False)
     last_name = models.CharField(max_length=100, blank=False, null=False)
@@ -53,5 +53,5 @@ class CustomUser(AbstractBaseUser):
         return self.first_name + " " + self.last_name
 
     def __str__(self):
-        return self.full_name()        
+        return self.full_name()      
         

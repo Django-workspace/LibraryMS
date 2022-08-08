@@ -27,7 +27,7 @@ class BookCategory(models.Model):
 def expiration():
     return datetime.today() + timedelta(days=15)
 
-class borrowing(models.Model):
+class Borrowing(models.Model):
     booktitle=models.ForeignKey(BookCategory,related_name='book',max_length=50,on_delete=models.CASCADE)
     borrowed_by=models.ForeignKey(User, max_length=50,on_delete=models.CASCADE)
     borrowed_date=models.DateField(auto_now_add=True)
